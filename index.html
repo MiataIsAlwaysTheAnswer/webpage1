@@ -1,1 +1,247 @@
-hello
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vina+Sans&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ff2d00;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 60px 30px;
+    background: #ff2d00;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
+
+  .headline {
+    font-family: 'Vina Sans', sans-serif;
+    font-size: 4em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .subheadline {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 400;
+  }
+
+  .mockup-section {
+    position: relative;
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mockup-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .mockup-wrapper img.tablet {
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+  }
+
+  .video-on-mockup {
+    position: absolute;
+    top: 17%;
+    left: 17%;
+    width: 66%;
+    height: 66%;
+    z-index: 3;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .video-on-mockup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .side-image {
+    position: absolute;
+    width: 150px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 20px;
+  }
+
+  .side-image.left-top { top: -40px; left: -120px; transform: rotate(-8deg); }
+  .side-image.left-bottom { bottom: -40px; left: -100px; transform: rotate(5deg); }
+  .side-image.right-top { top: -40px; right: -120px; transform: rotate(6deg); }
+  .side-image.right-bottom { bottom: -40px; right: -100px; transform: rotate(-5deg); }
+
+  .scrolling-bar {
+    background: #1a1a1a;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    margin: 80px auto;
+    border-radius: 16px;
+    max-width: 1000px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .scrolling-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollLeft 30s linear infinite;
+    font-size: 1.2em;
+    padding-left: 100%;
+  }
+
+  .scrolling-content span {
+    margin: 0 50px;
+  }
+
+  .scrolling-bar::before,
+  .scrolling-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .scrolling-bar::before {
+    left: 0;
+    background: linear-gradient(to right, #1a1a1a 0%, transparent 100%);
+  }
+
+  .scrolling-bar::after {
+    right: 0;
+    background: linear-gradient(to left, #1a1a1a 0%, transparent 100%);
+  }
+
+  @keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .wn-placeholder-copy {
+    background: #f4f4f4;
+    color: #000;
+    padding: 60px 40px;
+    font-size: 1.2em;
+    margin: 80px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 1000px;
+  }
+
+  .wn-cta-ref-group {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 20px;
+    margin: 80px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 1000px;
+  }
+
+  .wn-cta {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    font-family: 'Vina Sans', sans-serif;
+    margin-bottom: 40px;
+  }
+
+  .wn-static-references-dark {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .wn-static-reference {
+    font-size: 1.2em;
+  }
+</style>
+
+<div class="container">
+  <div class="headline">HEADLINE</div>
+  <div class="subheadline">Subheadline goes here with a more refined tone</div>
+
+  <div class="mockup-section">
+    <img src="https://via.placeholder.com/150" class="side-image left-top" />
+    <img src="https://via.placeholder.com/150" class="side-image left-bottom" />
+    <img src="https://via.placeholder.com/150" class="side-image right-top" />
+    <img src="https://via.placeholder.com/150" class="side-image right-bottom" />
+
+    <div class="mockup-wrapper">
+      <img src="https://via.placeholder.com/600x400?text=Tablet+Mockup" class="tablet" />
+      <div class="video-on-mockup">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="scrolling-bar">
+  <div class="scrolling-content">
+    <span>Reference One</span>
+    <span>Reference Two</span>
+    <span>Reference Three</span>
+    <span>Reference Four</span>
+    <span>Reference One</span>
+    <span>Reference Two</span>
+    <span>Reference Three</span>
+    <span>Reference Four</span>
+  </div>
+</div>
+
+<div class="wn-placeholder-copy">
+  Placeholder copy section goes here. Fill it with your amazing story or offer.
+</div>
+
+<div class="wn-cta-ref-group">
+  <a href="#" class="wn-cta">Call to Action</a>
+  <div class="wn-static-references-dark">
+    <div class="wn-static-reference">Static Ref 1</div>
+    <div class="wn-static-reference">Static Ref 2</div>
+    <div class="wn-static-reference">Static Ref 3</div>
+  </div>
+</div>
+
+<div class="wn-placeholder-copy">
+  More placeholder copy for deeper detail or story.
+</div>
+
+<div class="wn-cta-ref-group">
+  <a href="#" class="wn-cta">Call to Action</a>
+  <div class="wn-static-references-dark">
+    <div class="wn-static-reference">Static Ref A</div>
+    <div class="wn-static-reference">Static Ref B</div>
+    <div class="wn-static-reference">Static Ref C</div>
+  </div>
+</div>
