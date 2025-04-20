@@ -35,14 +35,21 @@
     max-width: 1000px;
     margin: 60px auto;
     padding: 60px 30px;
-    border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     width: calc(100% - 60px);
   }
 
+  .scrolling-bar,
+  .wn-placeholder-copy,
+  .wn-cta-ref-group,
+  .faq-section {
+    border-radius: 20px;
+  }
+
   .container {
     background: var(--color-bg-main);
+    border-radius: 10px;
   }
 
   .section {
@@ -66,29 +73,44 @@
 
   .mockup-section {
     position: relative;
-    margin: 80px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    width: calc(100% - 60px);
-    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 20px 0;
   }
+
+  .side-image {
+    position: absolute;
+    width: clamp(80px, 12vw, 120px); /* Dynamically scale with the window */
+    z-index: 1; /* Place the images behind the video */
+    border-radius: 0; /* Remove rounded corners */
+    margin: 0; /* Ensure no extra spacing */
+  }
+
+  /* Position images slightly behind and visually attached to the video */
+  .side-image.left-top { top: 5%; left: -10%; transform: rotate(5deg); }
+  .side-image.left { top: 50%; left: -10%; transform: translateY(-50%); }
+  .side-image.left-bottom { bottom: 5%; left: -10%; transform: rotate(-5deg); }
+  .side-image.right-top { top: 5%; right: -10%; transform: rotate(-5deg); }
+  .side-image.right { top: 50%; right: -10%; transform: translateY(-50%); }
+  .side-image.right-bottom { bottom: 5%; right: -10%; transform: rotate(5deg); }
 
   .mockup-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Ensure the video is above the images */
     background: var(--color-white);
-    border-radius: 20px;
+    border-radius: 6px; /* Slightly rounded corners for the bezel */
     padding: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .video-on-mockup {
-    width: 960px;
+    width: clamp(600px, 50vw, 960px); /* Dynamically scale between 600px and 960px */
     max-width: 90vw;
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: 4px; /* Slightly rounded corners for the video */
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   }
@@ -98,21 +120,6 @@
     height: 100%;
     border: none;
   }
-
-  .side-image {
-    position: absolute;
-    width: 250px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    border-radius: 20px;
-  }
-
-  .side-image.left-top { top: -5%; left: -15%; transform: rotate(5deg); }
-  .side-image.left { top: 50%; left: -15%; transform: translateY(-50%); }
-  .side-image.left-bottom { bottom: -5%; left: -15%; transform: rotate(-5deg); }
-  .side-image.right-top { top: -5%; right: -15%; transform: rotate(-5deg); }
-  .side-image.right { top: 50%; right: -15%; transform: translateY(-50%); }
-  .side-image.right-bottom { bottom: -5%; right: -15%; transform: rotate(5deg); }
 
   .scrolling-bar {
     background: var(--color-bg-dark);
@@ -183,11 +190,12 @@
     background: var(--color-red);
     color: var(--color-white);
     display: inline-block;
-    padding: 20px 40px;
-    font-size: 2em;
+    padding: 8px 50px;
+    font-size: 3em;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 8px;
+    font-style: italic;
+    border-radius: 25px;
     font-family: var(--font-display);
     margin-bottom: 40px;
     text-decoration: none;
@@ -259,8 +267,24 @@
       margin: 20px 10px; /* Reduce margins */
     }
 
+    .mockup-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Prevent content from going beyond the screen */
+      padding: 20px 0; /* Add padding to fix the cut-off issue */
+      margin: 20px 0; /* Adjust margin for better spacing */
+    }
+
+    .mockup-wrapper {
+      padding: 10px; /* Ensure consistent padding inside the mockup */
+    }
+
     .video-on-mockup {
-      width: 100%; /* Ensure video fits within the screen */
+      margin: 0 auto; /* Center the video */
+      width: 80%; /* Adjust video size for smaller screens */
+      max-width: 100vw;
     }
 
     .scrolling-content {
@@ -270,11 +294,26 @@
     }
 
     .side-image {
-      display: none; /* Hide side images on smaller screens to avoid clutter */
+      width: clamp(50px, 15vw, 150px); /* Scale dynamically for smaller screens */
     }
 
+    .side-image.left-top { top: -5%; left: 5%; transform: rotate(5deg); }
+    .side-image.left { top: 50%; left: 5%; transform: translateY(-50%); }
+    .side-image.left-bottom { bottom: -5%; left: 5%; transform: rotate(-5deg); }
+    .side-image.right-top { top: -5%; right: 5%; transform: rotate(-5deg); }
+    .side-image.right { top: 50%; right: 5%; transform: translateY(-50%); }
+    .side-image.right-bottom { bottom: -5%; right: 5%; transform: rotate(5deg); }
+    
     .faq-section h2 {
       font-size: 2em; /* Adjust FAQ section heading */
+    }
+
+    .mockup-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Prevent content from going beyond the screen */
     }
   }
 </style>
@@ -285,24 +324,25 @@
 
     <div class="mockup-section">
     <!-- Side images -->
-    <img src="https://via.placeholder.com/150" class="side-image left-top" />
-    <img src="https://via.placeholder.com/150" class="side-image left" />
-    <img src="https://via.placeholder.com/150" class="side-image left-bottom" />
-    <img src="https://via.placeholder.com/150" class="side-image right-top" />
-    <img src="https://via.placeholder.com/150" class="side-image right" />
-    <img src="https://via.placeholder.com/150" class="side-image right-bottom" />
+
 
     <!-- Video inside a white bezel -->
     <div class="mockup-wrapper">
       <div class="video-on-mockup">
         <iframe src="https://youtu.be/NpEaa2P7qZI?si=AM1z1dxkA-HfJc7y" allowfullscreen></iframe>
       </div>
+      <img src="https://via.placeholder.com/150" class="side-image left-top" />
+      <img src="https://via.placeholder.com/150" class="side-image left" />
+      <img src="https://via.placeholder.com/150" class="side-image left-bottom" />
+      <img src="https://via.placeholder.com/150" class="side-image right-top" />
+      <img src="https://via.placeholder.com/150" class="side-image right" />
+      <img src="https://via.placeholder.com/150" class="side-image right-bottom" />
     </div>
     </div>
 
 
   <div class="wn-cta-ref-group">
-    <a href="#" class="wn-cta">CTA</a>
+    <a href="#" class="wn-cta">Call To Action</a>
     <div class="wn-static-references-dark">
       <div class="wn-static-reference">Static Ref 1</div>
       <div class="wn-static-reference">Static Ref 2</div>
@@ -332,7 +372,7 @@
   </div>
 
   <div class="wn-cta-ref-group">
-    <a href="#" class="wn-cta">CTA</a>
+    <a href="#" class="wn-cta">Call To Action</a>
     <div class="wn-static-references-dark">
       <div class="wn-static-reference">Static Ref 1</div>
       <div class="wn-static-reference">Static Ref 2</div>
@@ -345,7 +385,7 @@
   </div>
 
   <div class="wn-cta-ref-group">
-    <a href="#" class="wn-cta">CTA</a>
+    <a href="#" class="wn-cta">Call To Action</a>
     <div class="wn-static-references-dark">
       <div class="wn-static-reference">Static Ref A</div>
       <div class="wn-static-reference">Static Ref B</div>
