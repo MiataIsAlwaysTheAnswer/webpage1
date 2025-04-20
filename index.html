@@ -2,13 +2,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+  :root {
+    --color-bg-main: #cc2400;
+    --color-bg-dark: #1a1a1a;
+    --color-bg-light: #f4f4f4;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-text-light: #ffffff;
+    --color-text-dark: #000000;
+    --font-primary: 'Inter', sans-serif;
+    --font-display: 'Vina Sans', sans-serif;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(ellipse at center, #ff2d00 0%, #cc2400 100%);
-    color: #ffffff;
+    font-family: var(--font-primary);
+    background: var(--color-bg-main);
+    color: var(--color-text-light);
     text-align: center;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-size: 300px 300px;
   }
 
   .container,
@@ -34,7 +48,7 @@
   }
 
   .headline {
-    font-family: 'Vina Sans', sans-serif;
+    font-family: var(--font-display);
     font-size: 5em;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -62,7 +76,7 @@
   .mockup-wrapper {
     position: relative;
     z-index: 2;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
@@ -97,8 +111,8 @@
   .side-image.right-bottom { bottom: -60px; right: -140px; transform: rotate(-5deg); }
 
   .scrolling-bar {
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
     overflow: hidden;
     position: relative;
     padding: 20px 0;
@@ -131,12 +145,12 @@
 
   .scrolling-bar::before {
     left: 0;
-    background: linear-gradient(to right, #1a1a1a 0%, transparent 100%);
+    background: linear-gradient(to right, var(--color-bg-dark) 0%, transparent 100%);
   }
 
   .scrolling-bar::after {
     right: 0;
-    background: linear-gradient(to left, #1a1a1a 0%, transparent 100%);
+    background: linear-gradient(to left, var(--color-bg-dark) 0%, transparent 100%);
   }
 
   @keyframes scrollLeft {
@@ -150,27 +164,27 @@
   }
 
   .wn-placeholder-copy {
-    background: #f4f4f4;
-    color: #000;
+    background: var(--color-bg-light);
+    color: var(--color-text-dark);
     padding: 60px 40px;
     font-size: 1.2em;
   }
 
   .wn-cta-ref-group {
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
   }
 
   .wn-cta {
-    background: #000;
-    color: #fff;
+    background: var(--color-black);
+    color: var(--color-white);
     display: inline-block;
     padding: 20px 40px;
     font-size: 1.6em;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 8px;
-    font-family: 'Vina Sans', sans-serif;
+    font-family: var(--font-display);
     margin-bottom: 40px;
     text-decoration: none;
   }
@@ -188,8 +202,8 @@
   }
 
   .faq-section {
-    background: #fff;
-    color: #000;
+    background: var(--color-white);
+    color: var(--color-black);
     text-align: left;
   }
 
@@ -197,7 +211,7 @@
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 40px;
-    font-family: 'Vina Sans', sans-serif;
+    font-family: var(--font-display);
   }
 
   .faq-item {
