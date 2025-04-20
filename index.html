@@ -3,12 +3,13 @@
 
 <style>
   :root {
-    --color-bg-texture: #cc2400;
-    --color-bg-main: #00a8cc;
-    --color-bg-dark: #1a1a1a;
-    --color-bg-light: #f4f4f4;
+    --color-bg-texture: #FF6500;
+    --color-bg-main: #ff822f;
+    --color-bg-dark: #111111;
+    --color-bg-light: #cecece;
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-red: #ff0000;
     --color-text-light: #ffffff;
     --color-text-dark: #000000;
     --font-primary: 'Inter', sans-serif;
@@ -50,7 +51,7 @@
 
   .headline {
     font-family: var(--font-display);
-    font-size: 5em;
+    font-size: 6em;
     text-transform: uppercase;
     margin-bottom: 20px;
     line-height: 1.1;
@@ -100,16 +101,18 @@
 
   .side-image {
     position: absolute;
-    width: 200px;
+    width: 250px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1;
     border-radius: 20px;
   }
 
-  .side-image.left-top { top: -60px; left: -160px; transform: rotate(-8deg); }
-  .side-image.left-bottom { bottom: -60px; left: -140px; transform: rotate(5deg); }
-  .side-image.right-top { top: -60px; right: -160px; transform: rotate(6deg); }
-  .side-image.right-bottom { bottom: -60px; right: -140px; transform: rotate(-5deg); }
+  .side-image.left-top { top: -5%; left: -15%; transform: rotate(5deg); }
+  .side-image.left { top: 50%; left: -15%; transform: translateY(-50%); }
+  .side-image.left-bottom { bottom: -5%; left: -15%; transform: rotate(-5deg); }
+  .side-image.right-top { top: -5%; right: -15%; transform: rotate(-5deg); }
+  .side-image.right { top: 50%; right: -15%; transform: translateY(-50%); }
+  .side-image.right-bottom { bottom: -5%; right: -15%; transform: rotate(5deg); }
 
   .scrolling-bar {
     background: var(--color-bg-dark);
@@ -177,11 +180,11 @@
   }
 
   .wn-cta {
-    background: var(--color-black);
+    background: var(--color-red);
     color: var(--color-white);
     display: inline-block;
     padding: 20px 40px;
-    font-size: 1.6em;
+    font-size: 2em;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 8px;
@@ -203,7 +206,7 @@
   }
 
   .faq-section {
-    background: var(--color-white);
+    background: var(--color-bg-light);
     color: var(--color-black);
     text-align: left;
   }
@@ -231,11 +234,19 @@
 
   @media (max-width: 768px) {
     .headline {
-      font-size: 3em;
+      font-size: 2.5em; /* Further reduce font size for smaller screens */
     }
 
     .subheadline {
-      font-size: 1.1em;
+      font-size: 1em; /* Ensure readability */
+    }
+
+    .faq-item h3 {
+      font-size: 1.2em; /* Adjust FAQ headings */
+    }
+
+    .faq-item p {
+      font-size: 1em; /* Adjust FAQ text */
     }
 
     .wn-placeholder-copy,
@@ -244,107 +255,116 @@
     .scrolling-bar,
     .mockup-section,
     .faq-section {
-      padding: 40px 20px;
-      margin: 40px 20px;
+      padding: 20px 10px; /* Reduce padding for smaller screens */
+      margin: 20px 10px; /* Reduce margins */
     }
 
     .video-on-mockup {
-      width: 90vw;
+      width: 100%; /* Ensure video fits within the screen */
     }
 
     .scrolling-content {
-      gap: 30px;
-      padding-right: 30px;
+      font-size: 1em; /* Adjust font size for readability */
+      gap: 20px; /* Reduce gap between scrolling items */
+      padding-right: 20px; /* Adjust padding */
+    }
+
+    .side-image {
+      display: none; /* Hide side images on smaller screens to avoid clutter */
+    }
+
+    .faq-section h2 {
+      font-size: 2em; /* Adjust FAQ section heading */
     }
   }
 </style>
 
 <div class="container">
-  <div class="headline">"HEADLINE"</div>
-  <div class="subheadline">Subheadline</div>
+    <div class="headline">"HEADLINE"</div>
+    <div class="subheadline">Subheadline</div>
 
-  <div class="mockup-section">
-  <!-- Side images -->
-  <img src="https://via.placeholder.com/150" class="side-image left-top" />
-  <img src="https://via.placeholder.com/150" class="side-image left-bottom" />
-  <img src="https://via.placeholder.com/150" class="side-image right-top" />
-  <img src="https://via.placeholder.com/150" class="side-image right-bottom" />
+    <div class="mockup-section">
+    <!-- Side images -->
+    <img src="https://via.placeholder.com/150" class="side-image left-top" />
+    <img src="https://via.placeholder.com/150" class="side-image left" />
+    <img src="https://via.placeholder.com/150" class="side-image left-bottom" />
+    <img src="https://via.placeholder.com/150" class="side-image right-top" />
+    <img src="https://via.placeholder.com/150" class="side-image right" />
+    <img src="https://via.placeholder.com/150" class="side-image right-bottom" />
 
-  <!-- Video inside a white bezel -->
-  <div class="mockup-wrapper">
-    <div class="video-on-mockup">
-      <iframe src="https://youtu.be/NpEaa2P7qZI?si=AM1z1dxkA-HfJc7y" allowfullscreen></iframe>
+    <!-- Video inside a white bezel -->
+    <div class="mockup-wrapper">
+      <div class="video-on-mockup">
+        <iframe src="https://youtu.be/NpEaa2P7qZI?si=AM1z1dxkA-HfJc7y" allowfullscreen></iframe>
+      </div>
+    </div>
+    </div>
+
+
+  <div class="wn-cta-ref-group">
+    <a href="#" class="wn-cta">CTA</a>
+    <div class="wn-static-references-dark">
+      <div class="wn-static-reference">Static Ref 1</div>
+      <div class="wn-static-reference">Static Ref 2</div>
+      <div class="wn-static-reference">Static Ref 3</div>
     </div>
   </div>
-</div>
 
-<div class="scrolling-bar">
-  <div class="scrolling-inner">
-    <div class="scrolling-content">
-      <span>Reference 1</span>
-      <span>Reference 2</span>
-      <span>Reference 3</span>
-      <span>Reference 4</span>
+  <div class="scrolling-bar">
+    <div class="scrolling-inner">
+      <div class="scrolling-content">
+        <span>Reference 1</span>
+        <span>Reference 2</span>
+        <span>Reference 3</span>
+        <span>Reference 4</span>
+      </div>
+      <div class="scrolling-content">
+        <span>Reference 1</span>
+        <span>Reference 2</span>
+        <span>Reference 3</span>
+        <span>Reference 4</span>
+      </div>
     </div>
-    <div class="scrolling-content">
-      <span>Reference 1</span>
-      <span>Reference 2</span>
-      <span>Reference 3</span>
-      <span>Reference 4</span>
+  </div>
+
+  <div class="wn-placeholder-copy">
+    Placeholder
+  </div>
+
+  <div class="wn-cta-ref-group">
+    <a href="#" class="wn-cta">CTA</a>
+    <div class="wn-static-references-dark">
+      <div class="wn-static-reference">Static Ref 1</div>
+      <div class="wn-static-reference">Static Ref 2</div>
+      <div class="wn-static-reference">Static Ref 3</div>
     </div>
   </div>
-</div>
 
-<div class="wn-placeholder-copy">
-  Placeholder
-</div>
+  <div class="wn-placeholder-copy">
+    Placeholder
+  </div>
 
-<div class="wn-cta-ref-group">
-  <a href="#" class="wn-cta">CTA</a>
-  <div class="wn-static-references-dark">
-    <div class="wn-static-reference">Static Ref 1</div>
-    <div class="wn-static-reference">Static Ref 2</div>
-    <div class="wn-static-reference">Static Ref 3</div>
+  <div class="wn-cta-ref-group">
+    <a href="#" class="wn-cta">CTA</a>
+    <div class="wn-static-references-dark">
+      <div class="wn-static-reference">Static Ref A</div>
+      <div class="wn-static-reference">Static Ref B</div>
+      <div class="wn-static-reference">Static Ref C</div>
+    </div>
   </div>
-</div>
-
-<div class="scrolling-bar">
-  <div class="scrolling-content">
-    <span>Ref A</span>
-    <span>Ref B</span>
-    <span>Ref C</span>
-    <span>Ref D</span>
-    <span>Ref A</span>
-    <span>Ref B</span>
-    <span>Ref C</span>
-    <span>Ref D</span>
-  </div>
-</div>
-
-<div class="wn-placeholder-copy">
-  Placeholder
-</div>
-
-<div class="wn-cta-ref-group">
-  <a href="#" class="wn-cta">CTA</a>
-  <div class="wn-static-references-dark">
-    <div class="wn-static-reference">Static Ref A</div>
-    <div class="wn-static-reference">Static Ref B</div>
-    <div class="wn-static-reference">Static Ref C</div>
-  </div>
-</div>
-  <div class="faq-section">
-  <h2>Placeholder</h2>
-  <div class="faq-item">
-    <h3>Placeholder</h3>
-    <p>Placeholder</p>
-  </div>
-  <div class="faq-item">
-    <h3>Placeholder</h3>
-    <p>Placeholder</p>
-  </div>
-  <div class="faq-item">
-    <h3>Placeholder</h3>
-    <p>Placeholder</p>
+    <div class="faq-section">
+    <h2>Placeholder</h2>
+    <div class="faq-item">
+      <h3>Placeholder</h3>
+      <p>Placeholder</p>
+    </div>
+    <div class="faq-item">
+      <h3>Placeholder</h3>
+      <p>Placeholder</p>
+    </div>
+    <div class="faq-item">
+      <h3>Placeholder</h3>
+      <p>Placeholder</p>
+    </div>
   </div>
 </div>
